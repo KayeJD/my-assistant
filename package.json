@@ -1,8 +1,29 @@
 {
+  "name": "my-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.tsx",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KayeJD/My-library.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KayeJD/My-library/issues"
+  },
+  "homepage": "https://github.com/KayeJD/My-library#readme",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.2",
     "@mui/material": "^7.3.2"
   }
+  
 }
