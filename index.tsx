@@ -476,7 +476,7 @@ const BlogWebsite = () => {
           </Fab>
         )}
 
-        {/* Login Dialog REMOVE THIS */}
+        {/* Login Dialog */}
         <Dialog open={loginDialog} onClose={() => setLoginDialog(false)}>
           <DialogTitle>Admin Login</DialogTitle>
           <DialogContent>
