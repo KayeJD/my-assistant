@@ -6,7 +6,7 @@ A cross-platform desktop assistant for students and young workers.
 - [ ] Task manager and focus timer
 - [ ] Spending tracker (local SQLite)
 - [ ] Calendar sync (Google)
-- [ ] SMS notifications (Twilio)
+- [ ] SMS notifications (Twilio)dfv
 - [ ] Voice command support
 - [ ] AI-based task summaries
 
@@ -14,7 +14,7 @@ A cross-platform desktop assistant for students and young workers.
 - [] Task manager with focus timer
 - [] Spending tracker (SQLite local)
 - [] Calendar integration (Google)
-- [] SMS notifications via Twilio
+- [] SMS notifications via Twiliov
 - [] Motivational daily greeting
 
 ## 🚀 Roadmap
