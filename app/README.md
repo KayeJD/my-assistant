@@ -3,12 +3,25 @@
 A cross-platform desktop assistant for students and young workers.
 
 ## 🧩 Features
-- [x] Task manager and focus timer
-- [x] Spending tracker (local SQLite)
-- [x] Calendar sync (Google)
-- [x] SMS notifications (Twilio)
+- [ ] Task manager and focus timer
+- [ ] Spending tracker (local SQLite)
+- [ ] Calendar sync (Google)
+- [ ] SMS notifications (Twilio)
 - [ ] Voice command support
 - [ ] AI-based task summaries
+
+## 🧩 Core Features
+- [] Task manager with focus timer
+- [] Spending tracker (SQLite local)
+- [] Calendar integration (Google)
+- [] SMS notifications via Twilio
+- [] Motivational daily greeting
+
+## 🚀 Roadmap
+- [ ] Voice command integration
+- [ ] Expense visualization
+- [ ] AI-based schedule suggestions
+- [ ] Offline data sync
 
 ## 🛠️ Tech Stack
 - **Framework:** Electron + React
