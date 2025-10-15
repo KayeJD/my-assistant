@@ -1,39 +1,95 @@
-# Student Assistant Desktop App
+# Assistant App
 
-A cross-platform desktop assistant for students and young workers.
+I'm genuinely still trying to figure out what I want to do with this here BUT I'm leaning towards a personalized, customizeable assistant console for production and figuring out adult life stuff. Plan to build as life goes on.
 
-## 🛠️ Tech Stack
-- **Framework:** Electron + React
-- **Frontend:** React + TailwindCSS
-- **Backend:** Node.js (Electron main process)
-- **APIs:** Google Calendar, Twilio
-- **Storage:** SQLPostgres (?)
 
-## 📦 Cross-Platform Build
-- Windows: `.exe`
-- macOS: `.dmg`
-- Packaged with **Electron Builder**
+## Features
 
-## Dev Notes
+- 🚀 Server-side rendering
+- ⚡️ Hot Module Replacement (HMR)
+- 📦 Asset bundling and optimization
+- 🔄 Data loading and mutations
+- 🔒 TypeScript by default
+- 🎉 TailwindCSS for styling
+- 💾 PostgreSQL + DrizzleORM
+- 📖 [React Router docs](https://reactrouter.com/)
 
-### Structure
+## Getting Started
+
+### Installation
+
+Install the dependencies:
+
+```bash
+npm install
 ```
-my-assistant/
-├── client/                    # React (frontend)
-│   ├── app/
-│   │   ├── routes/        # 
-│   │   ├── modules/           # Core features (tasks, timer, notifications, theme)
-│   │   │   ├── task/
-│
-├── .gitignore
-├── README.md
-└── package.json               # Optional workspace root (for npm/yarn workspaces)
+
+### Development
+
+Currently just developing in local docker postgres db with `.env`, so provide a `DATABASE_URL` with your connection string.
+
+Run an initial database migration:
+
+```bash
+npm run db:migrate
+```
+
+Start the development server with HMR:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:3000`.
+
+## Building for Production
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+## Deployment
+
+### Docker Deployment
+
+To build and run using Docker:
+
+```bash
+# For npm
+docker build -t my-assistant .
+
+# Run the container
+docker run -p 3000:3000 my-app
+```
+
+The containerized application can be deployed to any platform that supports Docker, including:
+
+- AWS ECS
+- Google Cloud Run
+- Azure Container Apps
+- Digital Ocean App Platform
+- Fly.io
+- Railway
+
+### DIY Deployment
+
+If you're familiar with deploying Node applications, the built-in app server is production-ready.
+
+Make sure to deploy the output of `npm run build`
 
 ```
-- /client/app/routes/ : [Routes](https://reactrouter.com/start/framework/routing)
+├── package.json
+├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
+├── server.js
+├── build/
+│   ├── client/    # Static assets
+│   └── server/    # Server-side code
 
+### Dev notes
 
-### 🧩 Features
+#### 🧩 Features
 - [ ] Task manager and focus timer
 - [ ] Modular console with customizable layout
 - [ ] Theme customizeable
@@ -43,7 +99,8 @@ my-assistant/
 - [ ] AI-based task summaries
 - [ ] Motivational daily greeting
 
-### Notes
+#### Notes
 
 1. Project created with Node, Docker, and Postgres: npx create-react-router@latest --template remix-run/react-router-templates/node-postgres
+
 
