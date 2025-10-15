@@ -14,7 +14,14 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum STATUS {
+  COMPLETED
+  PENDING
+  DNF
+}
+
 model Book {
   title String
   rating init
+  status STATUS
 }
