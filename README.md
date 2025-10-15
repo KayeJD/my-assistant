@@ -7,7 +7,7 @@ A cross-platform desktop assistant for students and young workers.
 - **Frontend:** React + TailwindCSS
 - **Backend:** Node.js (Electron main process)
 - **APIs:** Google Calendar, Twilio
-- **Storage:** SQLite (via better-sqlite3)
+- **Storage:** SQLPostgres (?)
 
 ## 📦 Cross-Platform Build
 - Windows: `.exe`
@@ -18,33 +18,32 @@ A cross-platform desktop assistant for students and young workers.
 
 ### Structure
 ```
-virtual-assistant/
-├── main/               ← Electron main process
-│   ├── main.js
-│   ├── preload.js
-│   └── db.js           ← Postgres setup
-├── renderer/           ← React (Vite + TypeScript)
-│   ├── src/
-│   │   └── App.tsx
-│   └── ...
-├── package.json
-├── tsconfig.json
-└── vite.config.ts
+my-assistant/
+├── client/                    # React (frontend)
+│   ├── app/
+│   │   ├── routes/        # 
+│   │   ├── modules/           # Core features (tasks, timer, notifications, theme)
+│   │   │   ├── task/
+│
+├── .gitignore
+├── README.md
+└── package.json               # Optional workspace root (for npm/yarn workspaces)
 
 ```
+- /client/app/routes/ : [Routes](https://reactrouter.com/start/framework/routing)
+
 
 ### 🧩 Features
 - [ ] Task manager and focus timer
-- [ ] Spending tracker (local SQLite)
+- [ ] Modular console with customizable layout
+- [ ] Theme customizeable
+- [ ] Spending tracker (maybe visual tracker conenct to payments)
 - [ ] Calendar sync (Google)
-- [ ] SMS notifications (Twilio)dfv
-- [ ] Voice command support
+- [ ] SMS notifications (Twilio)
 - [ ] AI-based task summaries
-
-### 🧩 Core Features
-- [ ] Task manager with focus timer
-- [ ] Spending tracker (SQLite local)
-- [ ] Calendar integration (Google)
-- [ ] SMS notifications via Twiliov
 - [ ] Motivational daily greeting
+
+### Notes
+
+1. Project created with Node, Docker, and Postgres: npx create-react-router@latest --template remix-run/react-router-templates/node-postgres
 
