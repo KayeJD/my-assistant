@@ -16,6 +16,23 @@ A cross-platform desktop assistant for students and young workers.
 
 ## Dev Notes
 
+### Structure
+```
+virtual-assistant/
+├── main/               ← Electron main process
+│   ├── main.js
+│   ├── preload.js
+│   └── db.js           ← Postgres setup
+├── renderer/           ← React (Vite + TypeScript)
+│   ├── src/
+│   │   └── App.tsx
+│   └── ...
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
+
+```
+
 ### 🧩 Features
 - [ ] Task manager and focus timer
 - [ ] Spending tracker (local SQLite)
@@ -30,10 +47,4 @@ A cross-platform desktop assistant for students and young workers.
 - [ ] Calendar integration (Google)
 - [ ] SMS notifications via Twiliov
 - [ ] Motivational daily greeting
-
-### 🚀 Roadmap
-- [ ] Voice command integration
-- [ ] Expense visualization
-- [ ] AI-based schedule suggestions
-- [ ] Offline data sync
 
