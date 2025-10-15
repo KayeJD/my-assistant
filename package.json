@@ -1,0 +1,26 @@
+{
+  "name": "my-assistant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KayeJD/My-Assistant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KayeJD/My-Assistant/issues"
+  },
+  "homepage": "https://github.com/KayeJD/My-Assistant#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^38.2.2",
+    "wait-on": "^9.0.1"
+  }
+}
