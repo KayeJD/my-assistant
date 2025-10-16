@@ -2,8 +2,9 @@ import { database } from "~/database/context";
 import * as schema from "~/database/schema";
 
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import { Welcome } from "../pages/Welcome/welcome";
 
+// Note: This file is just an example of how to use the database and form actions/loaders.
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "New React Router App" },
@@ -11,6 +12,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
+// This action handles form submissions to add a new entry to the guest book.
 export async function action({ request }: Route.ActionArgs) {
   const formData = await request.formData();
   let name = formData.get("name");
@@ -33,6 +35,7 @@ export async function action({ request }: Route.ActionArgs) {
   }
 }
 
+// This loader fetches the current entries in the guest book.
 export async function loader({ context }: Route.LoaderArgs) {
   const db = database();
 
@@ -49,6 +52,7 @@ export async function loader({ context }: Route.LoaderArgs) {
   };
 }
 
+// This is the main component for the home route.
 export default function Home({ actionData, loaderData }: Route.ComponentProps) {
   return (
     <Welcome

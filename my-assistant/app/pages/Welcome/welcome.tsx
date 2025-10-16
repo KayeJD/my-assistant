@@ -1,3 +1,6 @@
+// This is a simple welcome page with a guest book feature.
+// It demonstrates how to use React Router's Form, action, and loader features.
+// You can sign the guest book with your name and email, and see a list of previous signers.
 import { Form, useNavigation } from "react-router";
 
 import logoDark from "./logo-dark.svg";

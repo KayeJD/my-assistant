@@ -14,12 +14,15 @@ app.disable("x-powered-by");
 
 if (DEVELOPMENT) {
   console.log("Starting development server");
+
   const viteDevServer = await import("vite").then((vite) =>
     vite.createServer({
       server: { middlewareMode: true },
     }),
   );
+
   app.use(viteDevServer.middlewares);
+
   app.use(async (req, res, next) => {
     try {
       const source = await viteDevServer.ssrLoadModule("./server/app.ts");
@@ -33,10 +36,12 @@ if (DEVELOPMENT) {
   });
 } else {
   console.log("Starting production server");
+
   app.use(
     "/assets",
     express.static("build/client/assets", { immutable: true, maxAge: "1y" }),
   );
+  
   app.use(morgan("tiny"));
   app.use(express.static("build/client", { maxAge: "1h" }));
   app.use(await import(BUILD_PATH).then((mod) => mod.app));
