@@ -26,7 +26,14 @@ npm install
 
 ### Development
 
-Currently just developing in local docker postgres db with `.env`, so provide a `DATABASE_URL` with your connection string.
+Currently just developing in local docker postgres db with `.env`, so provide a `DATABASE_URL` with your connection string. 
+
+To make it easy for now, just create a quick instance and use connection string: _"postgresql://postgres:docker@localhost:5432/postgres"_
+
+```
+docker run --name my-assistant-db -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+```
+
 
 Run an initial database migration:
 
@@ -40,7 +47,7 @@ Start the development server with HMR:
 npm run dev
 ```
 
-The application will be available at `http://localhost:3000`.
+The application should be available at `http://localhost:3000`.
 
 ## Building for Production
 
@@ -61,7 +68,7 @@ To build and run using Docker:
 docker build -t my-assistant .
 
 # Run the container
-docker run -p 3000:3000 my-app
+docker run -p 3000:3000 my-assistant
 ```
 
 The containerized application can be deployed to any platform that supports Docker, including:
@@ -104,5 +111,3 @@ Make sure to deploy the output of `npm run build`
 #### Notes
 
 1. Project created with Node, Docker, and Postgres: npx create-react-router@latest --template remix-run/react-router-templates/node-postgres
-
-

@@ -2,7 +2,7 @@ import { database } from "~/database/context";
 import * as schema from "~/database/schema";
 
 import type { Route } from "./+types/home";
-import { Welcome } from "../pages/welcome/welcome";
+import { Welcome } from "../welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
