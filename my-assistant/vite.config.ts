@@ -16,7 +16,7 @@ export default defineConfig(({ isSsrBuild }) => ({
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths(), react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(__dirname, './app'),
     },
   },
 }));

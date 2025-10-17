@@ -2,6 +2,7 @@
 // It demonstrates how to use React Router's Form, action, and loader features.
 // You can sign the guest book with your name and email, and see a list of previous signers.
 import { Form, useNavigation } from "react-router";
+import { Button } from "~/components/ui/button";
 
 import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
@@ -86,6 +87,12 @@ export function Welcome({
                 required
                 className="w-full dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:focus:ring-blue-500 h-10 px-3 rounded-lg border border-gray-200 focus:ring-1 focus:ring-blue-500"
               />
+              <button
+                type="button"
+                className="w-full h-10 px-3 text-white bg-blue-500 rounded-lg hover:bg-blue-600"
+              >
+                Go to Dashboard
+              </button>
               <button
                 type="submit"
                 disabled={navigation.state === "submitting"}
