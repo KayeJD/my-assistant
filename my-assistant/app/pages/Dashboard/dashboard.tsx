@@ -1,5 +1,3 @@
-"use client"
-
 import { TrendingUp } from "lucide-react";
 import { CartesianGrid, Line, LineChart, XAxis } from "recharts";
 import { useNavigation } from "react-router";
@@ -10,13 +8,13 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card";
+} from "@/components/ui/card";
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "~/components/ui/chart";
-import type { ChartConfig } from "~/components/ui/chart";
+} from "@/components/ui/chart";
+import type { ChartConfig } from "@/components/ui/chart";
 
 export const description = "A multiple line chart"
 
