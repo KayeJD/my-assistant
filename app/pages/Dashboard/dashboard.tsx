@@ -8,13 +8,14 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "~/components/ui/card";
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart";
-import type { ChartConfig } from "@/components/ui/chart";
+} from "~/components/ui/chart";
+import type { ChartConfig } from "~/components/ui/chart";
+import { Button } from "~/components/ui/button";
 
 export const description = "A multiple line chart"
 
