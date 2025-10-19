@@ -31,7 +31,7 @@ Currently just developing in local docker postgres db with `.env`, so provide a 
 To make it easy for now, just create a quick instance and use connection string: _"postgresql://postgres:docker@localhost:5432/postgres"_
 
 ```
-docker run --name my-assistant-db -e POSTGRES_PASSWORD=docker -p 7777:7777 -d postgres
+docker run --name my-assistant-db -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
 ```
 
 
