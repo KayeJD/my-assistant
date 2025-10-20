@@ -111,3 +111,8 @@ Make sure to deploy the output of `npm run build`
 #### Notes
 
 1. Project created with Node, Docker, and Postgres: npx create-react-router@latest --template remix-run/react-router-templates/node-postgres
+2. In React Router route files, the component that renders the page must be the default export. The framework’s internal logic is roughly equivalent to:
+```
+const element = require(routeFile).default;
+```
+So if there’s no default export, there’s nothing to render.

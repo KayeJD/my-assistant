@@ -45,7 +45,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function Dashboard({ loaderData }: Route.ComponentProps) {
+export default function Dashboard({ loaderData }: Route.ComponentProps) {
   return (
     <Card>
       <CardHeader>
