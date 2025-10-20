@@ -1,10 +1,6 @@
-import { TrendingUp } from "lucide-react";
-import {
-  CartesianGrid,
-  Line,
-  LineChart,
-  XAxis,
-} from "recharts";
+// app/cards/chartCard.tsx
+import { MoreVertical, TrendingUp } from "lucide-react";
+import { CartesianGrid, Line, LineChart, XAxis } from "recharts";
 import {
   Card,
   CardContent,
@@ -13,6 +9,12 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "~/components/ui/dropdown-menu";
 import {
   ChartContainer,
   ChartTooltip,
@@ -34,23 +36,50 @@ const chartConfig = {
   mobile: { label: "Mobile", color: "var(--chart-2)" },
 } satisfies ChartConfig;
 
-export default function ChartCard({ title }: { title?: string }) {
+interface ChartCardProps {
+  onRemove?: () => void; 
+}
+
+export default function ChartCard({ onRemove }: ChartCardProps) {
   return (
-    <Card className="w-full">
-      <CardHeader>
-        <CardTitle>{title ?? "Line Chart"}</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+    <Card className="relative">
+      <CardHeader className="flex flex-row items-center justify-between">
+        <div>
+          <CardTitle>Line Chart - Multiple</CardTitle>
+          <CardDescription>January - June 2024</CardDescription>
+        </div>
+
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <button className="p-2 rounded-md hover:bg-muted">
+              <MoreVertical className="h-4 w-4" />
+            </button>
+          </DropdownMenuTrigger>
+
+          <DropdownMenuContent align="end">
+            <DropdownMenuItem onClick={onRemove}>
+              Remove Card
+            </DropdownMenuItem>
+            {/* NOTE: Maybe later add like an edit option to make bigger or something
+            */}
+          </DropdownMenuContent>
+        </DropdownMenu>
       </CardHeader>
+
       <CardContent>
         <ChartContainer config={chartConfig}>
-          <LineChart data={chartData} margin={{ left: 12, right: 12 }}>
+          <LineChart
+            accessibilityLayer
+            data={chartData}
+            margin={{ left: 12, right: 12 }}
+          >
             <CartesianGrid vertical={false} />
             <XAxis
               dataKey="month"
               tickLine={false}
               axisLine={false}
               tickMargin={8}
-              tickFormatter={(v) => v.slice(0, 3)}
+              tickFormatter={(value) => value.slice(0, 3)}
             />
             <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
             <Line
@@ -70,9 +99,17 @@ export default function ChartCard({ title }: { title?: string }) {
           </LineChart>
         </ChartContainer>
       </CardContent>
+
       <CardFooter>
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+        <div className="flex w-full items-start gap-2 text-sm">
+          <div className="grid gap-2">
+            <div className="flex items-center gap-2 leading-none font-medium">
+              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+            </div>
+            <div className="text-muted-foreground flex items-center gap-2 leading-none">
+              Showing total visitors for the last 6 months
+            </div>
+          </div>
         </div>
       </CardFooter>
     </Card>

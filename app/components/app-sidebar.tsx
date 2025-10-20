@@ -1,4 +1,5 @@
 import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
+// https://ui.shadcn.com/docs/components/sidebar
 
 import {
   Sidebar,
