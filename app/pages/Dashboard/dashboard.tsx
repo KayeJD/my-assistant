@@ -14,9 +14,8 @@ import {
   ChartTooltipContent,
 } from "~/components/ui/chart";
 import type { ChartConfig } from "~/components/ui/chart";
-import { SidebarProvider, SidebarTrigger } from "~/components/ui/sidebar"
 // import { AppSidebar } from "~/components/app-sidebar";
-import { Sidebar } from "~/components/ui/sidebar"
+import { DashboardLayout } from "~/layouts/dashboardLayout";
 
 import type { Route } from "./+types/dashboard";
 
@@ -29,72 +28,60 @@ export const description = "A multiple line chart"
 
 export default function Dashboard({ loaderData }: Route.ComponentProps) {
   return (
-    // ✅ Wrap everything that needs sidebar context
-    <SidebarProvider>
-      <div className="flex min-h-screen">
-        {/* Sidebar area */}
-        <Sidebar />
-
-        {/* Main content area */}
-        <main className="flex-1 p-6 space-y-4">
-          {/* Optional sidebar toggle button */}
-          <SidebarTrigger />
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Line Chart - Multiple</CardTitle>
-              <CardDescription>January - June 2024</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ChartContainer config={chartConfig}>
-                <LineChart
-                  accessibilityLayer
-                  data={chartData}
-                  margin={{ left: 12, right: 12 }}
-                >
-                  <CartesianGrid vertical={false} />
-                  <XAxis
-                    dataKey="month"
-                    tickLine={false}
-                    axisLine={false}
-                    tickMargin={8}
-                    tickFormatter={(value) => value.slice(0, 3)}
-                  />
-                  <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
-                  <Line
-                    dataKey="desktop"
-                    type="monotone"
-                    stroke="var(--color-desktop)"
-                    strokeWidth={2}
-                    dot={false}
-                  />
-                  <Line
-                    dataKey="mobile"
-                    type="monotone"
-                    stroke="var(--color-mobile)"
-                    strokeWidth={2}
-                    dot={false}
-                  />
-                </LineChart>
-              </ChartContainer>
-            </CardContent>
-            <CardFooter>
-              <div className="flex w-full items-start gap-2 text-sm">
-                <div className="grid gap-2">
-                  <div className="flex items-center gap-2 leading-none font-medium">
-                    Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-                  </div>
-                  <div className="text-muted-foreground flex items-center gap-2 leading-none">
-                    Showing total visitors for the last 6 months
-                  </div>
-                  <p>Welcome back, {loaderData.user}!</p>
-                </div>
+    <DashboardLayout>
+      <Card>
+        <CardHeader>
+          <CardTitle>Line Chart - Multiple</CardTitle>
+          <CardDescription>January - June 2024</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ChartContainer config={chartConfig}>
+            <LineChart
+              accessibilityLayer
+              data={chartData}
+              margin={{ left: 12, right: 12 }}
+            >
+              <CartesianGrid vertical={false} />
+              <XAxis
+                dataKey="month"
+                tickLine={false}
+                axisLine={false}
+                tickMargin={8}
+                tickFormatter={(value) => value.slice(0, 3)}
+              />
+              <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+              <Line
+                dataKey="desktop"
+                type="monotone"
+                stroke="var(--color-desktop)"
+                strokeWidth={2}
+                dot={false}
+              />
+              <Line
+                dataKey="mobile"
+                type="monotone"
+                stroke="var(--color-mobile)"
+                strokeWidth={2}
+                dot={false}
+              />
+            </LineChart>
+          </ChartContainer>
+        </CardContent>
+        <CardFooter>
+          <div className="flex w-full items-start gap-2 text-sm">
+            <div className="grid gap-2">
+              <div className="flex items-center gap-2 leading-none font-medium">
+                Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
               </div>
-            </CardFooter>
-          </Card>
-        </main>
-      </div>
-    </SidebarProvider>
+              <div className="text-muted-foreground flex items-center gap-2 leading-none">
+                Showing total visitors for the last 6 months
+              </div>
+              <p>Welcome back, {loaderData.user}!</p>
+            </div>
+          </div>
+        </CardFooter>
+      </Card>
+    </DashboardLayout>
   );
 }
 
