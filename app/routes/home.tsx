@@ -1,9 +1,13 @@
+// app/routes/home.tsx
+// This is a basic example of a route module in a React Router app.
+// It includes meta, action, loader, and component exports.
 import { database } from "~/database/context";
 import * as schema from "~/database/schema";
 
 import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
 
+// Meta function to define the document head for this route
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "New React Router App" },
@@ -11,6 +15,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
+// Action function to handle form submissions or other mutations
 export async function action({ request }: Route.ActionArgs) {
   const formData = await request.formData();
   let name = formData.get("name");
@@ -33,6 +38,7 @@ export async function action({ request }: Route.ActionArgs) {
   }
 }
 
+// Loader function to fetch data needed for rendering this route
 export async function loader({ context }: Route.LoaderArgs) {
   const db = database();
 
@@ -49,6 +55,7 @@ export async function loader({ context }: Route.LoaderArgs) {
   };
 }
 
+// Component function to render the UI for this route
 export default function Home({ actionData, loaderData }: Route.ComponentProps) {
   return (
     <Welcome

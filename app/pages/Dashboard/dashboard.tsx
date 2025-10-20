@@ -15,7 +15,13 @@ import {
   ChartTooltipContent,
 } from "~/components/ui/chart";
 import type { ChartConfig } from "~/components/ui/chart";
-import { Button } from "~/components/ui/button";
+import type { Route } from "./+types/dashboard";
+
+export async function loader() {
+  const data = { user: "Karryl", role: "Admin" };
+  return data;
+}
+
 
 export const description = "A multiple line chart"
 
@@ -39,7 +45,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function Dashboard() {
+export function Dashboard({ loaderData }: Route.ComponentProps) {
   return (
     <Card>
       <CardHeader>
@@ -91,6 +97,7 @@ export function Dashboard() {
             <div className="text-muted-foreground flex items-center gap-2 leading-none">
               Showing total visitors for the last 6 months
             </div>
+            <p>Welcome back, {loaderData.user}!</p>
           </div>
         </div>
       </CardFooter>

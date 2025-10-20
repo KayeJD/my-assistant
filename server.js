@@ -13,13 +13,17 @@ app.use(compression());
 app.disable("x-powered-by");
 
 if (DEVELOPMENT) {
+
   console.log("Starting development server");
   const viteDevServer = await import("vite").then((vite) =>
     vite.createServer({
       server: { middlewareMode: true },
     }),
   );
+
   app.use(viteDevServer.middlewares);
+
+  // Handle all other routes with Vite's SSR.
   app.use(async (req, res, next) => {
     try {
       const source = await viteDevServer.ssrLoadModule("./server/app.ts");
