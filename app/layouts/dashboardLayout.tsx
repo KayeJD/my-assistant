@@ -9,9 +9,10 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
         <Sidebar />
 
         {/* Main content section */}
-        <div className="flex flex-col flex-1">
-          {/* Optional header / topbar */}
-          <header className="flex items-center justify-between border-b p-4 bg-background">
+        <div className="flex flex-col flex-1 min-w-0"> {/* add min-w-0 to prevent overflow clipping */}
+            
+          {/* Header */}
+          <header className="flex items-center justify-between border-b px-6 py-4 bg-background">
             <div className="flex items-center gap-2">
               <SidebarTrigger />
               <h1 className="text-xl font-semibold">Dashboard</h1>
@@ -22,7 +23,9 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
           </header>
 
           {/* Main content area */}
-          <main className="flex-1 p-6 overflow-auto">{children}</main>
+          <main className="flex-1 w-full p-6 overflow-x-hidden">
+            {children}
+          </main>
         </div>
       </div>
     </SidebarProvider>
