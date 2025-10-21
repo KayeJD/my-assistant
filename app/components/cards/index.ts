@@ -1,5 +1,6 @@
 import ChartCard from "./chartCard";
 import StopwatchCard from "./stopwatchCard";
+import TodoCard from "./todoCard";
 
 export const dashboardCards = {
   chart: {
@@ -12,7 +13,13 @@ export const dashboardCards = {
     component: StopwatchCard,
     label: "Stopwatch",
     description: "Simple stopwatch for tracking time",
-    span: "col-span-1 md:col-span-2",
+    span: "col-span-2",
+  },
+  todo: {
+    component: TodoCard,
+    label: "To-Do List",
+    description: "Track your daily tasks",
+    span: "col-span-2",
   },
 };
 

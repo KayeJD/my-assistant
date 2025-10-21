@@ -23,6 +23,7 @@ export default function Dashboard({ loaderData }: Route.ComponentProps) {
     { id: number; type: DashboardCardType; size?: "1x" | "2x" }[]
   >([
     { id: Date.now(), type: "stopwatch", size: "2x" },
+    { id: Date.now() + 2, type: "todo" , size: "2x"},
   ]);
 
 
@@ -38,7 +39,6 @@ export default function Dashboard({ loaderData }: Route.ComponentProps) {
       return [...prev, { id: Date.now(), type, size: "1x" }];
     });
   };
-
 
   function removeCard(index: number) {
     setActiveCards((prev) => prev.filter((_, i) => i !== index));
@@ -73,6 +73,9 @@ export default function Dashboard({ loaderData }: Route.ComponentProps) {
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => addCard("stopwatch")}>
                 ⏱ Stopwatch Card
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => addCard("todo")}>
+                📝 To-Do List Card
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
