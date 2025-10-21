@@ -135,8 +135,10 @@ body {
 
 .stopwatch-time {
     text-align: center;
-    color: #fff;
+    color: #333;
     font-size: 80px;
+    font-family: system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .stopwatch-buttons {

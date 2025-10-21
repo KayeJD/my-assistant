@@ -37,9 +37,10 @@ const chartConfig = {
 
 interface ChartCardProps {
   onRemove?: () => void; 
+  onResize?: () => void;
 }
 
-export default function ChartCard({ onRemove }: ChartCardProps) {
+export default function ChartCard({ onRemove, onResize }: ChartCardProps) {
   return (
     <Card className="relative">
       <CardHeader className="flex flex-row items-center justify-between">
@@ -56,12 +57,10 @@ export default function ChartCard({ onRemove }: ChartCardProps) {
           </DropdownMenuTrigger>
 
           <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={onRemove}>
-              Remove Card
-            </DropdownMenuItem>
-            {/* NOTE: Maybe later add like an edit option to make bigger or something
-            */}
+            <DropdownMenuItem onClick={onRemove}>Remove Card</DropdownMenuItem>
+            <DropdownMenuItem onClick={onResize}>Resize Card</DropdownMenuItem>
           </DropdownMenuContent>
+
         </DropdownMenu>
       </CardHeader>
 
