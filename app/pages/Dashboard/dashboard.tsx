@@ -19,7 +19,12 @@ export async function loader() {
 }
 
 export default function Dashboard({ loaderData }: Route.ComponentProps) {
-  const [activeCards, setActiveCards] = useState<{ id: number; type: DashboardCardType; size?: "1x" | "2x" }[]>([]);
+  const [activeCards, setActiveCards] = useState<
+    { id: number; type: DashboardCardType; size?: "1x" | "2x" }[]
+  >([
+    { id: Date.now(), type: "stopwatch", size: "2x" },
+  ]);
+
 
   const addCard = (type: DashboardCardType) => {
     setActiveCards((prev) => {
