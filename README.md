@@ -99,7 +99,7 @@ Make sure to deploy the output of `npm run build`
 
 #### 🧩 Features
 - [X] Focus timer
-- [ ] Task manager
+- [X] Task manager
 - [ ] Add chrat that shows productivity time in hours throughout teh week (Add other lines such as play vs work time and etc.)
 - [ ] Modular console with customizable layout
 - [ ] Theme customizeable

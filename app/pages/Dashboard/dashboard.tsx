@@ -92,7 +92,11 @@ export default function Dashboard({ loaderData }: Route.ComponentProps) {
             return (
               <div
                 key={card.id}
-                className={card.size === "2x" ? "col-span-2" : "col-span-1"}
+                className={
+                  card.size === "2x"
+                    ? "col-span-1 md:col-span-2 h-80" // full width on small screens, 2-wide on md+
+                    : "col-span-1 h-80"
+                }
               >
                 <CardComponent
                   onRemove={() =>
