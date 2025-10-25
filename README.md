@@ -102,7 +102,7 @@ Make sure to deploy the output of `npm run build`
 - [X] Task manager
 - [ ] Create db prototype to save the profile and times (timer) every day and week, etc
 - [ ] Add chrat that shows productivity time in hours throughout teh week (Add other lines such as play vs work time and etc.)
-- [ ] Modular console with customizable layout
+- [X] Modular console with customizable layout
 - [ ] Theme customizeable
 - [ ] Spending tracker (maybe visual tracker conenct to payments)
 - [ ] Calendar sync (Google)
