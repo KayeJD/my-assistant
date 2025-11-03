@@ -108,7 +108,6 @@ Make sure to deploy the output of `npm run build`
 - [ ] Spending tracker (maybe visual tracker conenct to payments)
 - [ ] Calendar sync (Google)
 - [ ] SMS notifications (Twilio)
-- [ ] AI-based task summaries
 
 
 #### Notes
