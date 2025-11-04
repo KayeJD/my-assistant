@@ -40,10 +40,6 @@ export default function Dashboard({ loaderData }: Route.ComponentProps) {
     });
   };
 
-  function removeCard(index: number) {
-    setActiveCards((prev) => prev.filter((_, i) => i !== index));
-  }
-
   const toggleCardSize = (id: number) => {
     setActiveCards((prev) =>
       prev.map((card) =>

@@ -10,8 +10,8 @@ import { Welcome } from "../welcome/welcome";
 // Meta function to define the document head for this route
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "WOOO WORK" },
+    { name: "description", content: "WOOO WORK TIME!" },
   ];
 }
 
